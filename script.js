@@ -67,9 +67,7 @@ function selectAnswer(e) {
   })
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
-  } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+  
   }
 }
 
@@ -87,6 +85,12 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
+function endQuiz() {
+    clearInterval(setTimer);
+  
+var questionDisplay = document.getElementById("question-id");
+    questionDisplay.style.display = "none";
+}
 const questions = [
   {
     question: 'How Many Wheels Are On A BMX',
